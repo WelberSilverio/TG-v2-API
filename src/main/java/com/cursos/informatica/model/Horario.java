@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Entity
-@Table
+@Table(name = "horarios")
 @Getter
 @Setter
 @NoArgsConstructor

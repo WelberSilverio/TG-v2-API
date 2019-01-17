@@ -15,7 +15,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
-@Table
+@Table(name = "matriculas")
 @Getter
 @Setter
 @NoArgsConstructor

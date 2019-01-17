@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
-@Table
+@Table(name = "certificados")
 @Getter
 @Setter
 @NoArgsConstructor

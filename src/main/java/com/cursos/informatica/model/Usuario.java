@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Entity
-@Table
+@Table(name = "usuarios")
 @Getter
 @Setter
 @NoArgsConstructor

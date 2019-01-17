@@ -8,16 +8,13 @@ server.port: 8080
 # DataSource config
 spring:
   datasource:
-    url: ${URL}
+    url: jdbc:mysql://localhost:3306/informatica?useSSL=false
     username: root
-    password: ${SENHA}
-    hikari:
-      minimumIdle: 10
-      maximumPoolSize: 10
+    password: Ernetwork*
   jpa:
     hibernate.ddl-auto: update
     show-sql: true
-    properties.hibernate.dialect: org.hibernate.dialect.SQLServer2008Dialect
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
   jackson:
     default-property-inclusion: non_null
     serialization:
