@@ -3,7 +3,8 @@ app:
   description: Cursinho Manager is an API to manage occurrences
   version: 0.0.2
 
-server.port: 8080
+server:
+  port: 8080
 
 # DataSource config
 spring:

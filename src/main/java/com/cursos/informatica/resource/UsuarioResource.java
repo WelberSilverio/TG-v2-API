@@ -18,7 +18,7 @@ public class UsuarioResource {
         this.usuarioBusiness = usuarioBusiness;
     }
 
-    @GetMapping(value= "/{nickname,password}")
+    @GetMapping(value= "/{nickname}/{password}")
     public List<Usuario> listUsuarioLogin(@PathVariable(value="nickname") String nickname, @PathVariable(value="password") String password){
         return usuarioBusiness.findByNicknameWhithPassword(nickname,password);
     }

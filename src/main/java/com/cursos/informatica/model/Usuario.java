@@ -35,10 +35,10 @@ public class Usuario implements Serializable {
     private String nickname;
 
     @NotNull
-    @Column(name = "senha", unique = true)
+    @Column(name = "senha")
     private String password;
 
     @NotNull
-    @Column(name = "cargo", unique = true)
+    @Column(name = "cargo")
     private String cargo;
 }

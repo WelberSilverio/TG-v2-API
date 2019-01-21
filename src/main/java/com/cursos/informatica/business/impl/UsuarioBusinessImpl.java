@@ -21,7 +21,7 @@ public class UsuarioBusinessImpl implements UsuarioBusiness {
     }
 
     public List<Usuario> findByNicknameWhithPassword(String nickname, String password){
-        List<Usuario> usuarios = usuarioRepository.findByNicknameWhithPassword(nickname, password)
+        List<Usuario> usuarios = usuarioRepository.findByNicknameAndPassword(nickname, password)
                 .stream()
                 .filter(Objects::nonNull)
                 .collect(Collectors.toList());

@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario,Integer> {
-    public List<Usuario> findByNicknameWhithPassword(String nickname, String password);
+    public List<Usuario> findByNicknameAndPassword(String nickname, String password);
 }
