@@ -20,7 +20,7 @@ public class UsuarioBusinessImpl implements UsuarioBusiness {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public List<Usuario> findByNicknameWhithPassword(String nickname, String password){
+    public List<Usuario> findByNicknameWithPassword(String nickname, String password){
         List<Usuario> usuarios = usuarioRepository.findByNicknameAndPassword(nickname, password)
                 .stream()
                 .filter(Objects::nonNull)
@@ -31,5 +31,9 @@ public class UsuarioBusinessImpl implements UsuarioBusiness {
     public Usuario create(Usuario usuario){
        Usuario usuario1 = usuarioRepository.save(usuario);
        return usuario1;
+    }
+
+    public void delete(Integer id){
+        usuarioRepository.deleteById(id);
     }
 }

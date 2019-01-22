@@ -18,9 +18,9 @@ public class UsuarioResource {
         this.usuarioBusiness = usuarioBusiness;
     }
 
-    @GetMapping(value= "/{nickname}/{password}")
-    public List<Usuario> listUsuarioLogin(@PathVariable(value="nickname") String nickname, @PathVariable(value="password") String password){
-        return usuarioBusiness.findByNicknameWhithPassword(nickname,password);
+    @GetMapping(value= "/")
+    public List<Usuario> listUsuarioLogin(@RequestBody Usuario usuario){
+        return usuarioBusiness.findByNicknameWithPassword(usuario.getNickname(),usuario.getPassword());
     }
 
     @PostMapping(value="/")
@@ -28,5 +28,14 @@ public class UsuarioResource {
         return usuarioBusiness.create(usuario);
     }
 
+    @DeleteMapping(value="/{id}")
+    public void deletaUsuario(@PathVariable(value="id") Integer id){
+        usuarioBusiness.delete(id);
+    }
+
+    @PutMapping(value="/")
+    public Usuario alteraUsuario(@RequestBody Usuario usuario){
+        return usuarioBusiness.create(usuario);
+    }
 
 }
