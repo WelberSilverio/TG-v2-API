@@ -39,6 +39,7 @@ public class Usuario implements Serializable {
     private String password;
 
     @NotNull
-    @Column(name = "cargo")
-    private String cargo;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "cargo")
+    private Cargo cargo;
 }

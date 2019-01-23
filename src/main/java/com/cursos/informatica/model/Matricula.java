@@ -42,13 +42,16 @@ public class Matricula implements Serializable{
     private String moduloAtual;
 
     @NotNull
-    @Column(name = "id_aluno")
-    private Integer idAluno;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_aluno")
+    private Aluno aluno;
 
     @NotNull
-    @Column(name = "id_horario_um")
-    private Integer idHorarioUm;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_horario_um")
+    private Horario idHorarioUm;
 
-    @Column(name = "id_horario_dois")
-    private Integer idHorarioDois;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_horario_dois")
+    private Horario idHorarioDois;
 }

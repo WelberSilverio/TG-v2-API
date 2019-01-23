@@ -30,12 +30,15 @@ public class Certificado implements Serializable {
     @Column(name = "carga_horaria")
     private Integer cargaHoraria;
 
-    @Column(name = "id_prof_um")
-    private Integer idProfUm;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_prof_um")
+    private Usuario idProfUm;
 
-    @Column(name = "id_prof_dois")
-    private Integer idProfDois;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_prof_dois")
+    private Usuario idProfDois;
 
-    @Column(name = "id_aluno")
-    private Integer aluno;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_aluno")
+    private Aluno aluno;
 }
