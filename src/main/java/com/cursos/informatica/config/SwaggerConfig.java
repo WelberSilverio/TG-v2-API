@@ -1,6 +1,7 @@
 package com.cursos.informatica.config;
 
 import org.springframework.beans.factory.annotation.Value;
+import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -40,18 +41,12 @@ public class SwaggerConfig {
     }
 
     private ApiInfo metaInfo() {
-
-        ApiInfo apiInfo = new ApiInfo(
-                appName,
-                appDescription,
-                appVersion,
-                "Terms of Service",
-                new Contact("Welber Silvério", "https://github.com/WelberSilverio/TG-v2-API",
-                        "welbersilverio@gmail.com"),
-                "Apache License Version 2.0",
-                "https://www.apache.org/licesen.html", new ArrayList<VendorExtension>()
-        );
-
-        return apiInfo;
+            return new ApiInfoBuilder()
+                    .title(appName)
+                    .description(appDescription)
+                    .version(appVersion)
+                    .license("Apache License Version 2.0")
+                    .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0\"")
+                    .build();
     }
 }
