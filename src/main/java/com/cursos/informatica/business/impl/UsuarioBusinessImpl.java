@@ -21,11 +21,7 @@ public class UsuarioBusinessImpl implements UsuarioBusiness {
     }
 
     public List<Usuario> findByNicknameWithPassword(String nickname, String password){
-        List<Usuario> usuarios = usuarioRepository.findByNicknameAndPassword(nickname, password)
-                .stream()
-                .filter(Objects::nonNull)
-                .collect(Collectors.toList());
-        return usuarios;
+        return usuarioRepository.findByNicknameAndPassword(nickname, password);
     }
 
     public Usuario create(Usuario usuario){
@@ -35,5 +31,9 @@ public class UsuarioBusinessImpl implements UsuarioBusiness {
 
     public void delete(Integer id){
         usuarioRepository.deleteById(id);
+    }
+
+    public List<Usuario> findAllUsuarios(){
+        return usuarioRepository.findAll();
     }
 }

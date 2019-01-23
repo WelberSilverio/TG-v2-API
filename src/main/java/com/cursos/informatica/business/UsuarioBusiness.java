@@ -8,4 +8,5 @@ public interface UsuarioBusiness {
    List<Usuario> findByNicknameWithPassword(String nickname, String password);
    Usuario create(Usuario usuario);
    void delete(Integer id);
+   List<Usuario> findAllUsuarios();
 }

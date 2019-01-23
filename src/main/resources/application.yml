@@ -1,5 +1,5 @@
 app:
-  name: cursinhomanager
+  name: CursinhoManager
   description: Cursinho Manager is an API to manage occurrences
   version: 0.0.2
 
