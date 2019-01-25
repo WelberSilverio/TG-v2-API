@@ -40,6 +40,6 @@ public class Usuario implements Serializable {
 
     @NotNull
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cargo")
+    @JoinColumn(name = "id_cargo")
     private Cargo cargo;
 }

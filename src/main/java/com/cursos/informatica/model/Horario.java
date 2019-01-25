@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.time.LocalTime;
 
 @Entity
 @Table(name = "horarios")
@@ -29,9 +30,9 @@ public class Horario implements Serializable {
 
     @NotNull
     @Column(name = "hr_inicio")
-    private String hrInicio;
+    private LocalTime hrInicio;
 
     @NotNull
     @Column(name = "hr_fim")
-    private String hrFim;
+    private LocalTime hrFim;
 }
