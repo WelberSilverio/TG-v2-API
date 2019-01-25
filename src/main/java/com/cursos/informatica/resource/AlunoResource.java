@@ -7,6 +7,8 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value="/api/student")
 @Api(value = "API Cursinho Informatica")
@@ -25,4 +27,7 @@ public class AlunoResource {
         return alunoBusiness.create(usuario);
     }
 
+    @GetMapping(value= "/all")
+    @ApiOperation(value = "Lista todos Alunos")
+    public List<Aluno> listaTodosAlunos(){ return alunoBusiness.findAll(); }
 }

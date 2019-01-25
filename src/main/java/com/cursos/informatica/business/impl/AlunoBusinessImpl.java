@@ -6,6 +6,7 @@ import com.cursos.informatica.repository.AlunoRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 @Transactional
@@ -19,5 +20,9 @@ public class AlunoBusinessImpl implements AlunoBusiness {
     public Aluno create(Aluno aluno){
         Aluno aluno1 = alunoRepository.save(aluno);
         return aluno1;
+    }
+
+    public List<Aluno> findAll(){
+        return alunoRepository.findAll();
     }
 }
